@@ -30,3 +30,72 @@ variable "vpc_name" {
   default     = "develop"
   description = "VPC network&subnet name"
 }
+
+###ssh vars
+
+variable "vms_ssh_root_key" {
+  type        = string
+  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOjfVGkByr8vEZZMnNiPAjbVjbfQyLOGBqwsv7GNgZF7 Liza0@Lokkie7"
+  description = "ssh-keygen -t ed25519"
+}
+
+#my variables
+
+variable "vm_web_family" {
+  type        = string
+  default     = "ubuntu-2004-lts"
+  description = "image family"
+}
+
+variable "vm_web_platform" {
+  type        = string
+  default     = "standard-v3"
+  description = "choosing a processor"
+}
+
+variable "vms_resourses_web" {
+  description = "Tags to set for resources"
+  type        = map(number)
+  default         = {
+    cores       = 2
+    memory      = 1
+    core_fraction = 20
+  }
+}
+variable "vms_resourses_db" {
+  description = "Tags to set for resources"
+  type        = map(number)
+  default         = {
+    cores       = 2
+    memory      = 2
+    core_fraction = 20
+  }
+}
+
+
+variable "metadata" {
+  description = "Tags to set for resources"
+  type        = map
+  default         = {
+    serial-port-enable = 1
+    ssh-keys           = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOjfVGkByr8vEZZMnNiPAjbVjbfQyLOGBqwsv7GNgZF7 Liza0Lokkie7"
+  }
+}
+
+variable "vm_web_ispreemptible" {
+  type        = bool
+  default     = true
+  description = "is vm preemptible"
+}
+
+variable "vm_web_nethasnat" {
+  type        = bool
+  default     = true
+  description = "nat for net"
+}
+
+variable "vm_web_role" {
+  type        = string
+  default     = "web"
+}
+
