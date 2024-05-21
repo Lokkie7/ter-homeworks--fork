@@ -1,4 +1,4 @@
-token  =  "y0_AgAAAAAbzSe1AATuwQAAAAD9usAbAABO5zMGkutHHINMJJ4_c9N2zXKZ9Q"
+token  =  "..."
 cloud_id  = "b1gg6k1qulpgskn6jnfm"
 folder_id = "b1gtt2kdsv05v3r1fmhk"
 ids = [
