@@ -17,15 +17,6 @@ resource "yandex_compute_disk" "empty-disk" {
   block_size = var.disk_bsize
 }
 
-variable "ids" {
-  type = list(object(
-    {
-      d_id = string
-    }))
-  default = []
-}
-
-
 resource "yandex_compute_instance" "platform3" {
   name        = "storage"
   platform_id = "${var.vm_web_platform}"
@@ -40,10 +31,10 @@ resource "yandex_compute_instance" "platform3" {
     }
   }
   
-  dynamic "secondary_disk" {
-    for_each = var.ids
+dynamic "secondary_disk" {
+    for_each = yandex_compute_disk.empty-disk
     content {
-      disk_id = lookup(secondary_disk.value, "d_id", null)
+      disk_id = lookup(secondary_disk.value, "id", null)
     }
   }
 
