@@ -35,7 +35,7 @@ variable "vpc_name" {
 
 variable "vms_ssh_root_key" {
   type        = string
-  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOjfVGkByr8vEZZMnNiPAjbVjbfQyLOGBqwsv7GNgZF7 Liza0@Lokkie7"
+  default     = "..."
   description = "ssh-keygen -t ed25519"
 }
 
@@ -78,7 +78,7 @@ variable "metadata" {
   type        = map
   default         = {
     serial-port-enable = 1
-    ssh-keys           = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOjfVGkByr8vEZZMnNiPAjbVjbfQyLOGBqwsv7GNgZF7 Liza0Lokkie7"
+    ssh-keys           = "..."
   }
 }
 
