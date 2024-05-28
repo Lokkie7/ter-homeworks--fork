@@ -18,7 +18,7 @@ variable "folder_id" {
 
 variable "vms_ssh_root_key" {
   type        = string
-  default     = "your_ssh_ed25519_key"
+  default     = ""
   description = "ssh-keygen -t ed25519"
 }
 
@@ -44,7 +44,7 @@ variable "username_vm" {
 
 variable "ssh_public_key_vm" {
   type        = string
-  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOjfVGkByr8vEZZMnNiPAjbVjbfQyLOGBqwsv7GNgZF7 Liza0@Lokkie7"
+  default     = ""
 }
 
 
