@@ -14,23 +14,6 @@ variable "folder_id" {
   description = "https://cloud.yandex.ru/docs/resource-manager/operations/folder/get-id"
 }
 
-variable "default_zone" {
-  type        = string
-  default     = "ru-central1-a"
-  description = "https://cloud.yandex.ru/docs/overview/concepts/geo-scope"
-}
-variable "default_cidr" {
-  type        = list(string)
-  default     = ["10.0.1.0/24"]
-  description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
-}
-
-variable "vpc_name" {
-  type        = string
-  default     = "develop"
-  description = "VPC network&subnet name"
-}
-
 ###common vars
 
 variable "vms_ssh_root_key" {
@@ -53,5 +36,31 @@ variable "vm_db_name" {
   description = "example vm_db_ prefix"
 }
 
+variable "username_vm" {
+  type        = string
+  default     = "lokkie7"
+  description = "username for vm"
+}
+
+variable "ssh_public_key_vm" {
+  type        = string
+  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOjfVGkByr8vEZZMnNiPAjbVjbfQyLOGBqwsv7GNgZF7 Liza0@Lokkie7"
+}
 
 
+variable "default_zone" {
+  type        = string
+  default     = "ru-central1-a"
+  description = "https://cloud.yandex.ru/docs/overview/concepts/geo-scope"
+}
+variable "default_cidr" {
+  type        = list(string)
+  default     = ["10.0.1.0/24"]
+  description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
+}
+
+variable "vpc_name" {
+  type        = string
+  default     = "develop"
+  description = "VPC network&subnet name"
+}
